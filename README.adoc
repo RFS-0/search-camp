@@ -1,0 +1,67 @@
+= Search Camp - An Easy Way to Monitor Availability of Campsites
+
+The goal of this simple `Node` app is to get notified whenever an already booked out camp site has become available. 
+This is useful for campsites that are booked out months in advance, but frequent cancellations. 
+The app will notify you when a campsite becomes available.
+
+== How to use
+
+The following sections should help you get started.
+
+=== Prerequisites
+
+* Git - `brew install git`
+* Node.js - `brew install node` or `brew install nvm`
+
+=== Setup
+
+==== Clone the repo
+
+[source, bash]
+----
+git clone https://github.com/RFS-0/search-camp.git && cd search-camp
+----
+
+==== Install dependencies
+
+[source, bash]
+----
+npm install
+----
+
+=== Configuration
+
+. Adjust queries in `queries.json` to your needs
+.. Search Campground on https://www.recreation.gov/search?inventory_type=camping[Recreation.gov]
+.. Copy the `campGroundId` parameter from the URL, e.g. for Upper Pines with URL `https://www.recreation.gov/camping/campgrounds/232447` the `campGroundId` is `232447` and use it in the `queries.json` file
+.. Specify the months you are interested in. You can specify multiple months but the input is not sanitized, so make sure to specify 2-digits for the month, e.g. `03` for March
+.. Specify the dates you are interested in. You can specify multiple dates but the input is not sanitized, so make sure to follow the format `YYYY-MM-DD`, e.g. `2023-03-01` for March 1st, 2023
+
+[source, json]
+----
+[
+  {
+    "queryCriteria": {
+      "campGroundId": 232447,
+      "months": [
+        "03"
+      ]
+    },
+    "filterCriteria": {
+      "desiredDates": [
+        "2023-03-27"
+      ]
+    }
+  }
+]
+----
+
+
+=== Run
+
+Start the app by running
+
+[source, bash]
+----
+npm run search
+----

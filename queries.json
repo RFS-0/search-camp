@@ -1,0 +1,15 @@
+[
+  {
+    "queryCriteria": {
+      "campGroundId": 232447,
+      "months": [
+        "03"
+      ]
+    },
+    "filterCriteria": {
+      "desiredDates": [
+        "2023-03-27"
+      ]
+    }
+  }
+]
