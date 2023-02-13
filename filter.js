@@ -10,6 +10,9 @@ export function filter(fetchedData, filterCriteria) {
   const filteredCampSites = [];
   for (const data of fetchedData) {
     for (const campSiteId of Object.keys(data)) {
+      if (!campSiteId) {
+        console.warn("No campsite id found");
+      }
       const campSite = data[campSiteId];
       for (const date of Object.keys(campSite["availabilities"])) {
         for (const desiredDate of filterCriteria.desiredDates) {

@@ -8,7 +8,9 @@ export async function fetchData(queryCriteria) {
       `https://www.recreation.gov/api/camps/availability/campground/${campGroundId}/month?start_date=2023-${month}-01T00%3A00%3A00.000Z`
     );
     const data = await response.json();
-    fetchedData.push(data.campsites);
+    if (!!data) {
+      fetchedData.push(data.campsites);
+    }
   }
   return fetchedData;
 }
