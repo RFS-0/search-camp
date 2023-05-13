@@ -1,14 +1,17 @@
 [
   {
     "queryCriteria": {
-      "campGroundId": 232447,
+      "campGroundName": "Furnace Creek Campground",
+      "campGroundId": 232496,
       "months": [
-        "03"
+        "04"
       ]
     },
     "filterCriteria": {
+      "includeTentOnly": true,
+      "includeGroup": false,
       "desiredDates": [
-        "2023-03-27"
+        "2023-04-14"
       ]
     }
   }

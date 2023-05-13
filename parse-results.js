@@ -16,6 +16,7 @@ export function parse(results) {
       wait: true,
       timeout: 30,
     })
+    console.log(`Created notification for campsite "${result.site}" at ${result.loop} the link is 'https://www.recreation.gov/camping/campsites/${result.campsite_id}'`);
   }
   return notifications;
 }
